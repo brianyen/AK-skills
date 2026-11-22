@@ -1,0 +1,83 @@
+{
+  "barrel-blast": {
+    "name": "Barrel Blast",
+    "description": "upon skill activation, pushes targets equal to block count with moderate force, stunning them for...",
+    "type": "automatic",
+    "activation": "auto",
+    "range-extension": "",
+    "attributes": [0, 5, null],
+    "icon": "fake-url"
+  },
+  "hydraulics-mode": {
+    "name": "Hydraulics Mode",
+    "description": "attack range expands, attack interval decreases, +150% atk, attacks shift enemies with moderate force",
+    "type": "automatic",
+    "activation": "auto",
+    "range-extension": "some reference to range",
+    "attributes": [0, 70, -1],
+    "icon": "fake-url"
+  },
+  "liquid-nitrogen-cannon": {
+    "name": "Liquid Nitrogen Cannon",
+    "description": "shoots a projectile that deals 380% of weedy's attack as arts damage, shifts enemies with great force. enemies hit will take 800 true damage per tile they move for 7 seconds. if weedy's water cannon is adjacent to her, it also shoots the same projectile",
+    "type": "automatic",
+    "activation": "manual",
+    "range-extension": "some reference to range",
+    "attributes": [20, 30, null],
+    "icon": "fake-url"
+  },
+  "charing-mode": {
+    "name": "Charging Mode",
+    "description": "shoots 3 times each dealing 135% attack",
+    "type": "offensive",
+    "activation": "auto",
+    "range-extension": "",
+    "attributes": [0, 3, null],
+    "icon": "fake-url"
+  },
+  "shooting-mode": {
+    "name": "Shooting Mode",
+    "description": "shoots 4 times each dealing 110% attack",
+    "type": "automatic recovery",
+    "activation": "manual",
+    "range-extension": "",
+    "attributes": [25, 35, 15],
+    "icon": "fake-url"
+  },
+  "overloading-mode": {
+    "name": "Overloading Mode",
+    "description": "attack interval decreases, shoot 5 times each dealing 110% attack",
+    "type": "automatic recovery",
+    "activation": "auto",
+    "range-extension": "",
+    "attributes": [20, 30, 15],
+    "icon": "fake-url"
+  },
+  "charge-beta": {
+    "name": "Charge β",
+    "description": "gain 9 deployment points",
+    "type": "automatic recovery",
+    "activation": "manual",
+    "range-extension": "",
+    "attributes": [15, 30, null],
+    "icon": "fake-url"
+  },
+  "command-attack": {
+    "name": "Command - Attack",
+    "description": "gain 11 deployment points, +30% atk",
+    "type": "automatic recovery",
+    "activation": "manual",
+    "range-extension": "",
+    "attributes": [18, 30, 15],
+    "icon": "fake-url"
+  },
+  "command-defense": {
+    "name": "Command - Defense",
+    "description": "gain 11 deployment points, +30% def",
+    "type": "automatic recovery",
+    "activation": "manual",
+    "range-extension": "",
+    "attributes": [18, 30, 15],
+    "icon": "fake-url"
+  }
+}

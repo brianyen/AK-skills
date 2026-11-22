@@ -1,0 +1,18 @@
+{
+  "courier": {
+    "name": "Courier",
+    "portrait": "fakeurl"
+  },
+  "exusiai": {
+    "name": "Exusiai",
+    "portrait": "fakeurl"
+  },
+  "scavenger": {
+    "name": "Scavenger",
+    "portrait": "fakeurl"
+  },
+  "weedy": {
+    "name":  "Weedy",
+    "portrait": "fakeurl"
+  }
+}

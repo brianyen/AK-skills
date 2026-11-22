@@ -1,2 +1,8 @@
-images
-operators.json
+src/main/resources/data/images
+.idea/
+*.iml
+target/
+.DS_Store
+Thumbs.db
+*.log
+

@@ -1,0 +1,17 @@
+{
+    "weedy": {
+        "s1": {"name": "barrel burst", "description": "pushes enemies 2 tiles or something idk bro"},
+        "s2": {"name": "hydraulics mode", "description": "attack interval something attack up"},
+        "s3": {"name": "liquid nitrogen cannon", "description": "big dot or something idk"}
+    },
+    "exusiai": {
+        "s1": {"name": "shooty mode", "description": "the powerstrike thing shoot 3 times"},
+        "s2": {"name": "shooting mode", "description": "the bad skill shoot 4 times"},
+        "s3": {"name": "overloading mode", "description": "pew pew pew pew pew"}
+    },
+    "ch'en": {
+        "s1": {"name": "sheath strike idk", "description": "stun wow"},
+        "s2": {"name": "chi xiao: unsheathe", "description": "washed up"},
+        "s3": {"name": "chi xiao: shadowless", "description": "swag"}
+    }
+}
