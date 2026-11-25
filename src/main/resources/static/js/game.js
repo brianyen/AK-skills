@@ -1,29 +1,31 @@
-let answersOptionsToggleEl = document.getElementById("answers-options-toggle");
-let answersOptionsDropdownEl = document.getElementById("answers-options-dropdown");
-let answersOptionsSelectEl = document.getElementById("answers-options-select");
-let answersOptionsFilterEl = document.getElementById("answers-options-filter");
+let answerOptionsToggleEl = document.getElementById("answer-options-toggle");
+let answerOptionsDropdownEl = document.getElementById("answer-options-dropdown");
+let answerOptionsSelectEl = document.getElementById("answer-options-select");
+let answerOptionsFilterEl = document.getElementById("answer-options-filter");
+
+let characters = null;
 
 document.addEventListener("click", (e) => {
-    if (!answersOptionsToggleEl.contains(e.target)) {
-        answersOptionsSelectEl.style.display = "none";
-        answersOptionsDropdownEl.classList.remove("open");
+    if (!answerOptionsToggleEl.contains(e.target)) {
+        answerOptionsSelectEl.style.display = "none";
+        answerOptionsDropdownEl.classList.remove("open");
     }
 })
 
-answersOptionsDropdownEl.addEventListener("click", () => {
-    if (answersOptionsSelect.style.display != "block") {
-        answersOptionsSelect.style.display = "block";
-        answersOptionsDropdownEl.classList.toggle('open');
-        answersOptionsFilterEl.focus();
+answerOptionsDropdownEl.addEventListener("click", () => {
+    if (answerOptionsSelect.style.display != "block") {
+        answerOptionsSelect.style.display = "block";
+        answerOptionsDropdownEl.classList.toggle('open');
+        answerOptionsFilterEl.focus();
     } else {
-        answersOptionsSelect.style.display = "none";
-        answersOptionsDropdownEl.classList.remove('open');
+        answerOptionsSelect.style.display = "none";
+        answerOptionsDropdownEl.classList.remove('open');
     }
 })
 
-answersOptionsFilterEl.addEventListener("input", (e) => {
-    toMatch = answersOptionsFilterEl.value.toUpperCase();
-    for (let option of answersOptionsSelectEl.getElementsByClassName("options-item")) {
+answerOptionsFilterEl.addEventListener("input", (e) => {
+    toMatch = answerOptionsFilterEl.value.toUpperCase();
+    for (let option of answerOptionsSelectEl.getElementsByClassName("options-item")) {
         if (option.getAttribute("value").toUpperCase().startsWith(toMatch)) {
             options.style.display = "block";
         } else {
@@ -33,36 +35,47 @@ answersOptionsFilterEl.addEventListener("input", (e) => {
 })
 
 function loadCharacters() {
-    // get list of all the characters
-    let names = []
-    for (let name of names) {
-        let option = document.createElement("div");
-        option.className = "options-item";
-        option.setAttribute("value", name);
-        option.textContent = name;
-        option.addEventListener("click", (e) => {
-            // submit the answer
-            answersOptionsSelectEl.style.display = "none";
-            answersOptionsFilterEl.textContent = "";
-            answersOptionsDropdownEl.classList.remove("open");
-        })
-        option.tabIndex = 0;
-        option.addEventListener('keydown', (e) => {
-            if (e.key === "Enter") {
-                e.preventDefault();
-                option.click();
-            } else if (e.key === " ") {
-                e.preventDefault();
-            }
-        })
-        option.addEventListener('keyup', (e) => {
-            if (e.key === " ") {
-                e.preventDefault();
-                option.click();
-            }
-        })
-        answersOptionsSelectEl.appendChild(option);
-    }
+    fetch("/api/characters")
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json()
+    })
+    .then(data => {
+        characters = data;
+        let names = data.map(c => c["name"]);
+        for (let name of names) {
+            let option = document.createElement("div");
+            option.className = "options-item";
+            option.setAttribute("value", name);
+            option.textContent = name;
+            option.addEventListener("click", (e) => {
+                console.log(e.getAttribute("value"));
+                // submit the answer
+                answerOptionsSelectEl.style.display = "none";
+                answerOptionsFilterEl.textContent = "";
+                answerOptionsDropdownEl.classList.remove("open");
+            })
+            option.tabIndex = 0;
+            option.addEventListener('keydown', (e) => {
+                if (e.key === "Enter") {
+                    e.preventDefault();
+                    option.click();
+                } else if (e.key === " ") {
+                    e.preventDefault();
+                }
+            })
+            option.addEventListener('keyup', (e) => {
+                if (e.key === " ") {
+                    e.preventDefault();
+                    option.click();
+                }
+            })
+            answerOptionsSelectEl.appendChild(option);
+        }
+    })
+    .catch((error) => console.error("Error:", error));
 }
 
 loadCharacters();
