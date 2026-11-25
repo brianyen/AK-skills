@@ -1,18 +1,18 @@
-{
-  "courier": {
-    "name": "Courier",
-    "portrait": "fakeurl"
+[
+  {
+    "id": "courier",
+    "name": "Courier"
   },
-  "exusiai": {
-    "name": "Exusiai",
-    "portrait": "fakeurl"
+  {
+    "id": "exusiai",
+    "name": "Exusiai"
   },
-  "scavenger": {
-    "name": "Scavenger",
-    "portrait": "fakeurl"
+  {
+    "id": "scavenger",
+    "name": "Scavenger"
   },
-  "weedy": {
-    "name":  "Weedy",
-    "portrait": "fakeurl"
+  {
+    "id": "weedy",
+    "name":  "Weedy"
   }
-}
+]

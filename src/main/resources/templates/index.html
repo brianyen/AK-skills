@@ -9,15 +9,8 @@
     <a href="/" id="go-home" class="go-home">Arknights Skills Quiz</a>
     <div id="help-button">Help Placeholder</div>
 </div>
-<div class="options-toggle" id="game-options-toggle">
-    <div class="options-dropdown" id="game-options-dropdown">
-        <span class="options-toggle-text" id="game-options-toggle-text">Icons Mode</span>
-    </div>
-    <div class="options-select" id="game-options-select">
-        <input type="text" placeholder="Select a game mode" autocomplete="off" class="options-filter" id="game-options-filter"/>
-    </div>
-    <a href="/play" id="play-button" class="play-button">Play</a>
-</div>
+<a href="/game?mode=icons" id="icons-button" class="play-button">Skill Icons Quiz</a>
+<a href="/game?mode=descriptions" id="descriptions-button" class="play-button">Skill Descriptions Quiz</a>
 <script th:src="@{/js/index.js}"></script>
 </body>
 

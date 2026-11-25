@@ -1,3 +1,0 @@
-function enterGame() {
-    fetch()
-}
